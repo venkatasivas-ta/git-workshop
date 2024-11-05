@@ -9,7 +9,11 @@ def double_number(a):
     Returns:
     int or float: The doubled value of the input number.
     """
-    return a+a
+    print(f"value before double_number(): {a}")
+    result = 2*a
+    print(f"value after double_number(): {result}")
+    return
+
 
 def square_number(a):
     """
@@ -21,4 +25,8 @@ def square_number(a):
     Returns:
     int or float: The squared value of the input number.
     """
-    return a*a
+    print(f"value before square_number(): {a}")
+    result = a*a
+    print(f"value after square_number(): {result}")
+    return
+    
