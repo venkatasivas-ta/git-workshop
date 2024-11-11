@@ -26,8 +26,25 @@ jobs:
           pip install --uprade build
           python -m build
           tree .
-    #  - name: Artifact creation
-      #  run: |
-       #   rm dist/
+      - name: Artifact creation
+        run: |
+          rm dist/my_package-0.0.0.tar.gz  
+          mv script.py dist/script.py  
+          tree.
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my_artifact
+          path: dist/
+    # deploy:
+    #   name:
+    #   needs:
+    #   run-on:
+    #   steps:
+    #     - name:
+    #       uses:
+    #       with:
+    #           name:
+
 
 
