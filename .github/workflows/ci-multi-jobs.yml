@@ -3,7 +3,7 @@ name: CI-Multi-Jobs
 on:
   push:
     branches:
-      - branch_name
+      - gitws/1/docstring
   workflow_dispatch:
 
 jobs:
