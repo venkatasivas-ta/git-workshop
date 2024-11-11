@@ -36,15 +36,21 @@ jobs:
         with:
           name: my_artifact
           path: dist/
-    # deploy:
-    #   name:
-    #   needs:
-    #   run-on:
-    #   steps:
-    #     - name:
-    #       uses:
-    #       with:
-    #           name:
+    deploy:
+      name: deploy job
+      needs: with-checkout-job
+      run-on:'ubuntu-latest'
+      steps:
+        - name:Download artifact
+          uses:actions/download-artifact@v4
+          with:
+              name:my_artifact
+          - name: Run script.py
+            run: |
+             ls -R
+             pip install *.whl
+             python script.py
+
 
 
 

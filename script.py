@@ -1,5 +1,5 @@
 """
-This script demonstrates the use of functions imported from the 
+This script demonstrates the use of functions imported from the
 simple_functions module.
 It includes examples of doubling and squaring a number.
 
