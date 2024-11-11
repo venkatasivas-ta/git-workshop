@@ -7,15 +7,27 @@ on: #trigger
   workflow_dispatch: #manual run
 
 jobs:
-
-  hello-worls-job: #name of job
-    name: Hello World
+  with-checkout-job:
+    name: With Checkout
     runs-on: 'ubuntu-latest'
     steps:
-      - name: Run echo
-        run: | #run multiple commandsc
-          echo "Hello world.!"
+      - name: Git Checkout
+        uses: actions/checkout@v4
 
-      - name: Run ls
+      - name: Install tree & run
         run: |
-          ls -la
+          sudo apt-get install -y tree
+          tree .
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y python3 python3-pip
+      - name: Build package
+        run: |
+          pip install --uprade build
+          python -m build
+          tree .
+    #  - name: Artifact creation
+      #  run: |
+       #   rm dist/
+
+
